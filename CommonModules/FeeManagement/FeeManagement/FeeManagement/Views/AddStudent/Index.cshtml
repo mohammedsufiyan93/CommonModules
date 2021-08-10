@@ -1,0 +1,50 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="container">
+    <div class="card" style="top: 20px; background-color:gainsboro">
+        <div class="card-body">
+            <h5 class="card-title">Student Info </h5>
+            <form action="/JoinTheMovement/Voluntersubmitquery" method="post" role="form" class="php-email-form" asp-antiforgery="true">
+                @Html.AntiForgeryToken()
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputFname">First Name <span style="color:red">*</span></label>
+                        <input name="inputFname" type="text" class="form-control" id="inputFname" placeholder="Enter your First Name" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputMname">Middle Name</label>
+                        <input name="inputMname" type="text" class="form-control" id="inputMname" placeholder="Enter your Middle Name">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputLname">Last Name <span style="color:red">*</span></label>
+                        <input name="inputLname" type="text" class="form-control" id="inputLname" placeholder="Enter your Last Name" required>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail">Email <span style="color:red">*</span></label>
+                        <input name="inputEmail" type="email" class="form-control" id="inputEmail" placeholder="Enter your Email Address" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputNumber">Phone Number <span style="color:red">*</span></label>
+                        <input name="inputNumber" type="number" class="form-control" id="inputNumber" placeholder="Enter your Phone Number" required>
+                    </div>
+                </div>
+                <br />
+
+                <div class="form-row">
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div style="margin-top: 40px"></div>
+</div>

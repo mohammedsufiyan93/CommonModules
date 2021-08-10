@@ -1,0 +1,13 @@
+{
+  "Smtpdetails": {
+    "credentials": {
+      "emailFromAddress": "",
+      "smtpAddress": "smtp.gmail.com",
+      "emailToAddress": [ "" ],
+      "bulkEmailToAddress": [ "" ],
+      "sendGridApiKey": "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",
+      "mailsuffix": ""
+    }
+  },
+  "DataBaseConnection": "Data Source=198.38.83.200;Initial Catalog=amrullah_asofttestdb;Persist Security Info=True;User ID=amrullah_asofttest;Password=ygp0vmaouwfhibdtkcsn;"
+}
