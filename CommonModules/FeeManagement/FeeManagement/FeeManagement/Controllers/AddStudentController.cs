@@ -31,26 +31,25 @@ namespace FeeManagement.Controllers
                 string mobile = Request.Form["inputNumber"];
                 string email = Request.Form["inputEmail"];
 
-                //string connectionlink = Src.DataHelper.Root.DataBaseConnection;                                
-                string getSqlCon = Src.DataHelper.Root.DataBaseConnection;
+                string constr = "Data Source=198.38.83.200;Initial Catalog=amrullah_asofttestdb;Persist Security Info=True;User ID=amrullah_asofttest;Password=ygp0vmaouwfhibdtkcsn;";
+                //string connectionlink = Src.DataHelper.Root.DataBaseConnection;
+                //string getSqlCon = Src.DataHelper.Root.DataBaseConnection;
 
-                using (SqlConnection SqlCon = new SqlConnection(getSqlCon))
+                using (SqlConnection SqlCon = new SqlConnection(constr))
                 {
                     SqlCon.Open();
-                    //string query = "INSERT into dbo.SystemUser Values(@Firstname,@Middlename,@Lastname,@Mothername,@Fathername,@DateofBirth,@Gender, @ResidentInIndia, @Religion, @Qualification, @Profession, @City, @State, @Pincode, @Telephone, @Mobile,@Email, @Hobli, @Taluk, @District, @Municipality, @WardNumberandName, @AssemblyConstitunecy, @LokSabhaConstituency, @FaceBookProfile, @TwitterProfile )";
-                    //string query = "INSERT into SystemUser Values(@Firstname,@Middlename,@Lastname, @Mobile,@Email)";
-                    //string query = "INSERT into SystemUser ([Firstname], [Middlename], [Lastname], [Mothername], [Fathername], [DateofBirth], [Gender], [ResidentInIndia], [Religion], [Qualification], [Profession], [City], [State], [Pincode], [Telephone], [Mobile], [Hobli], [Taluk], [District], [Municipality], [WardNumberandName], [AssemblyConstituency], [LokSabhaConstituency], [FaceBookProfile], [TwitterProfile]) VALUES(@Firstname ,@Middlename, @Lastname, @Mothername, @Fathername, @DateofBirth, @Gender, @ResidentInIndia, @Religion, @Qualification, @Profession, @City, @State, @Pincode, @Telephone, @Mobile, @Email, @Hobli, @Taluk, @District, @Municipality, @WardNumberandName, @AssemblyConstituency, @LokSabhaConstituency, @FaceBookProfile, @TwitterProfile)";
-                    string query = "INSERT into FeeManagement ([Firstname], [Middlename], [Lastname],[Mobile], [Email]) VALUES(@Firstname ,@Middlename, @Lastname, @Mobile, @Email)";
-                    //string query = "INSERT into SystemUser ([Firstname], [Middlename], [Lastname], [Mobile], [Email]) VALUES(@Firstname ,@Middlename, @Lastname, @Mobile, @Email)";
+                    string query = "INSERT into amrullah_asofttest.FeeManagement ([FirstName],[MiddleName],[LastName],[Email],[Mobile]) Values(@Firstname,@Middlename,@Lastname,@Mobile,@Email)";
+
                     SqlCommand SqlCmd = new SqlCommand(query, SqlCon);
 
                     //This is for required field
                     SqlCmd.Parameters.AddWithValue("@Firstname", firstName);
+                    SqlCmd.Parameters.AddWithValue("@Middlename", middleName);
                     SqlCmd.Parameters.AddWithValue("@Lastname", lastName);
                     SqlCmd.Parameters.AddWithValue("@Mobile", mobile);
                     SqlCmd.Parameters.AddWithValue("@Email", email);
 
-                    //This is for not required field
+                   // This is for not required field
                     //pass field name and value to AddSqlValue function which fields are not mandatory
                     //AddSqlValue(SqlCmd, "@DateofBirth", dob);
                     //AddSqlValue(SqlCmd, "@Mothername", motherName);
@@ -61,10 +60,10 @@ namespace FeeManagement.Controllers
                     //AddSqlValue(SqlCmd, "@Religion", religion);
 
                     SqlCmd.ExecuteNonQuery();
-                    //SqlCon.Close();
+                    SqlCon.Close();
                 }
 
-                return View("VolunteroSuccessMessage");
+                return View("Successmsg");
             }
             catch (Exception ex)
             {
@@ -88,5 +87,9 @@ namespace FeeManagement.Controllers
             sqlCommand.Parameters.Add(sqlParameter);
         }
 
+        public ActionResult Successmsg()
+        {
+            return View();
+        }
     }
 }
