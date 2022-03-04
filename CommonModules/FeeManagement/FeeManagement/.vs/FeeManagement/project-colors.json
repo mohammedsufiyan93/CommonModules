@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "ee6b2840-f09e-4a7d-9f87-32dc2e0796ca": {
+      "ProjectGuid": "ee6b2840-f09e-4a7d-9f87-32dc2e0796ca",
+      "DisplayName": "FeeManagement",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using FeeManagement.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace FeeManagement.Controllers
 {
@@ -26,30 +28,43 @@ namespace FeeManagement.Controllers
             try
             {
                 string firstName = Request.Form["inputFname"];
-                string middleName = Request.Form["inputMname"];
+                //string middleName = Request.Form["inputMname"];
                 string lastName = Request.Form["inputLname"];
                 string mobile = Request.Form["inputNumber"];
                 string email = Request.Form["inputEmail"];
+                string fathername = Request.Form["inputFathername"];
+                string dob = Request.Form["inputDob"];
+                string state = Request.Form["inputState"];
+                string city = Request.Form["inputCity"];
+                //string pincode = Request.Form["inputPincode"];
+                string address = Request.Form["inputAddress"];
 
-                string constr = "Data Source=198.38.83.200;Initial Catalog=amrullah_asofttestdb;Persist Security Info=True;User ID=amrullah_asofttest;Password=ygp0vmaouwfhibdtkcsn;";
+                string constr = "Data Source=DESKTOP-U9C38Q8;Initial Catalog=asoft_DB;Persist Security Info=True;User ID=Dev_asoft;Password=Dkb4o]zdem+luWhpanf8yEi%sgq7tc;";
+                //string constr = "Data Source=198.38.83.200;Initial Catalog=amrullah_asofttestdb;Persist Security Info=True;User ID=amrullah_asofttest;Password=ygp0vmaouwfhibdtkcsn;";
                 //string connectionlink = Src.DataHelper.Root.DataBaseConnection;
                 //string getSqlCon = Src.DataHelper.Root.DataBaseConnection;
 
                 using (SqlConnection SqlCon = new SqlConnection(constr))
                 {
                     SqlCon.Open();
-                    string query = "INSERT into amrullah_asofttest.FeeManagement ([FirstName],[MiddleName],[LastName],[Email],[Mobile]) Values(@Firstname,@Middlename,@Lastname,@Mobile,@Email)";
+                    string query = "INSERT into asoft_DB.dbo.student ([FirstName],[LastName],[Email],[Mobile],[FatherName],[State],[City],[Address]) Values(@Firstname,@Lastname,@Email,@Mobile,@Fathername,@State,@City,@Address)";
 
                     SqlCommand SqlCmd = new SqlCommand(query, SqlCon);
 
                     //This is for required field
                     SqlCmd.Parameters.AddWithValue("@Firstname", firstName);
-                    SqlCmd.Parameters.AddWithValue("@Middlename", middleName);
+                    //SqlCmd.Parameters.AddWithValue("@Middlename", middleName);
                     SqlCmd.Parameters.AddWithValue("@Lastname", lastName);
                     SqlCmd.Parameters.AddWithValue("@Mobile", mobile);
                     SqlCmd.Parameters.AddWithValue("@Email", email);
+                    SqlCmd.Parameters.AddWithValue("@Fathername", fathername);
+                   // SqlCmd.Parameters.AddWithValue("@Dob", dob);
+                    SqlCmd.Parameters.AddWithValue("@State", state);
+                    SqlCmd.Parameters.AddWithValue("@City", city);
+                    //SqlCmd.Parameters.AddWithValue("@Pincode", pincode);
+                    SqlCmd.Parameters.AddWithValue("@Address", address);
 
-                   // This is for not required field
+                    // This is for not required field
                     //pass field name and value to AddSqlValue function which fields are not mandatory
                     //AddSqlValue(SqlCmd, "@DateofBirth", dob);
                     //AddSqlValue(SqlCmd, "@Mothername", motherName);
@@ -91,5 +106,13 @@ namespace FeeManagement.Controllers
         {
             return View();
         }
+        //public ActionResult TestDropdown()
+        //{
+        //    SubjectModel model = new SubjectModel();
+        //    model.SubjectList.Add(new SelectListItem { Text = "Physics", Value = "1" });
+        //    model.SubjectList.Add(new SelectListItem { Text = "Chemistry", Value = "2" });
+        //    model.SubjectList.Add(new SelectListItem { Text = "Mathematics", Value = "3" });
+        //    return View();
+        //}
     }
 }

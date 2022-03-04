@@ -3,7 +3,7 @@
 *@
 @{
 }
-<nav class="navbar navbar-expand-lg navbar-dark  bg-primary">
+@*<nav class="navbar navbar-expand-lg navbar-dark  bg-primary">
     <div class="container-fluid">
         <a class="navbar-brand" href="/Home">Fee Management</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,9 +12,34 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-link active" aria-current="page" href="/Home">Home</a>
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link"asp-controller="AddStudent" asp-action="TestDropdown">Features</a>
                 <a class="nav-link" href="#">Pricing</a>
             </div>
         </div>
     </div>
-</nav>
+</nav>*@
+<div class="wrapper">
+    <div class="sidebar">
+        <h2>Fee Management</h2>
+        <ul style="padding-left: 0;!important;">
+            <li><a href="/Home"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="/AddStudent"><i class="fas fa-user"></i>Student Admission</a></li>
+            <li><a href="#"><i class="fas fa-address-card"></i>Take Fees</a></li>
+            <li><a href="/SearchRecord"><i class="fas fa-project-diagram"></i>Add Fees</a></li>
+            <li><a href="/Courses"><i class="fas fa-blog"></i>Courses</a></li>
+            <li><a href="#"><i class="fas fa-address-book"></i>Contact</a></li>
+            <li><a href="#"><i class="fas fa-map-pin"></i>Maps</a></li>
+        </ul>
+        <div class="social_media">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+       @* <div class="main_content">
+            <div class="header">Welcome!! Have a nice day.</div>
+            <div class="info">
+                <div>lorem lorem</div>
+            </div>
+        </div>*@
+</div>

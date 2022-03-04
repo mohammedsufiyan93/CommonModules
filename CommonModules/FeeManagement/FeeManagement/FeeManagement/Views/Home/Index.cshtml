@@ -1,20 +1,31 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
-<div class="container">
-    <div class="row mt-5">
-        <div class="col-4 bg-warning text-center">
-            <h5 class="pt-5 pr-5 pb-5 pl-5 text-black-50"><a href="/AddStudent">Add Student</a></h5>
+﻿<div class="container">
+    <div class="card" style="top: 20px; background-color:gainsboro;margin-left: 180px; margin-top:80px; width:980px">
+        <div class="card-body text-center">
+            <h5 class="card-title">Dash Board </h5>
+            <div class="row ">
+                <div class="col-4 dash_board">
+                    <a href="/AddStudent">Student Admission</a>
+                </div>
+                <div class="col-4 dash_board">
+                    <a href="#">Student Information</a>
+                </div>
+                <div class="col-4 dash_board">
+                    <a href="/Courses">Courses</a>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-4 dash_board">
+                    <a href="/SearchRecord">Add Fees</a>
+                </div>
+                <div class="col-4 dash_board">
+                    <a href="#">Student Information</a>
+                </div>
+                <div class="col-4 dash_board">
+                    <a href="#">Student Information</a>
+                </div>
+            </div>
         </div>
-        <div class="col-4 bg-secondary text-center">
-            <h5 class="pt-5 pr-5 pb-5 pl-5 text-black-50"><a href="#">Add Fee</a></h5>
-        </div>
-        <div class="col-4 bg-warning text-center">
-            <h5 class="pt-5 pr-5 pb-5 pl-5 text-black-50"><a href="/Courses">Courses</a></h5>
-        </div>
-        <div class="col-4 bg-secondary text-center">
-            <h5 class="pt-5 pr-5 pb-5 pl-5 text-black-50"><a href="/SearchRecord">Search Record</a></h5>
-        </div>
+        
     </div>
+    <div style="margin-top: 40px"></div>
 </div>

@@ -58,3 +58,30 @@
         </div>
     </div>
 </div>
+<br/>
+<div class="container">
+    <div class="card" style="top: 20px; background-color:gainsboro;margin-left: 180px; margin-top:80px; width:980px">
+        <div class="card-body">
+            <h5 class="card-title">Student Info </h5>
+            <form action="/SearchRecord/Studentsubmitquery" method="post" role="form" class="php-email-form" asp-antiforgery="true">
+                @Html.AntiForgeryToken()
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputSid">Student ID<span style="color:red">*</span></label>
+                        <input name="inputSid" type="text" class="form-control" id="inputSid" placeholder="Enter Student ID" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputCid">Course ID<span style="color:red">*</span></label>
+                        <input name="inputCid" type="text" class="form-control" id="inputCid" placeholder="Enter Course ID" required>
+                    </div>
+                </div>
+                <br />
+
+                <div class="form-row">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div style="margin-top: 40px"></div>
+</div>
