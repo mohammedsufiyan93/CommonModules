@@ -1,0 +1,9 @@
+################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Silver-Management-System/v17
+/.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json
+/SilverProcessingApplication/.vs/SilverProcessingApp/v17/.suo
+/SilverProcessingApplication/.vs/SilverProcessingApp/v17/.futdcache.v1
