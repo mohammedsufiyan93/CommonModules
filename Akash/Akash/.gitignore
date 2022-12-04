@@ -1,0 +1,47 @@
+
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
+/bin/
+/bin/*
+/obj/
+/obj/*
+bin
+obj
+bin/
+obj/
+\obj\
+\bin\
+\obj\*
+\bin\*
+*bin
+*obj
+*\obj
+*\bin
+*\obj\
+*\bin\
+.vs/
+.config
+.suo
+.dtbcache.v2
+slnx.sqlite
+VSWorkspaceState.json
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+[Bb]in/
+[Oo]bj/
+# build folder is nowadays used for build scripts and should not be ignored
+#build/
+
+# NuGet Packages
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/packages/*
+# except build/, which is used as an MSBuild target.
+!**/packages/build/
+# Uncomment if necessary however generally it will be regenerated when needed
+#!**/packages/repositories.config
